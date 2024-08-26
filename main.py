@@ -4,7 +4,7 @@ import datetime
 # 文件名
 FILE_NAME = r"我的课表.xlsx"
 # 开学时间 年/月/日
-START_YEAR = 2024; START_MONTH = 2; START_DAY = 26
+START_YEAR = 2024; START_MONTH = 8; START_DAY = 26
 # 课程开始时间
 CLASS_START_TIME = ["080000", "085500", "100000", "105500", "133000", "142500", "153000", "162500", "182000", "190500", "200000", "204500"]
 # 一节课程持续时间
@@ -98,15 +98,16 @@ def getTime(s):
             end = idx
     return int(s[start: end - 1])
 def getLocation(s):
-    ss = s.split('-')
-    if len(ss) < 2:
-        return s
-    return ss[1] + ss[2]
+    return s
+#    ss = s.split('-')
+#    if len(ss) < 2:
+#        return s
+#    return ss[1] + ss[2]
 def decodeColumn(column):
     for s in column:
         if len(s) > 0:
             ss = s.split('\n')
-            id  = name = weeks = week = time = loc = ""
+            id = name = weeks = week = time = loc = ""
             for sss in ss:
                 if len(sss) > 0:
                     t = sss.split('-')
